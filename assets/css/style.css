@@ -4,3 +4,15 @@
     color:white;
     width:100%;
 }
+#title{
+    background-color: lavender;
+    width: 100%;
+    text-align:center;
+    color:grey;
+    font-weight:150;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.button-adder{
+    margin-top: 200px;
+}
