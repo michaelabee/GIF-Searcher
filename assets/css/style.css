@@ -1,18 +1,32 @@
+/*
+NICE COLOR SCHEME 
+#8EB8E5
+#7C99B4
+#FFBE0C
+#6B7F82
+#273E47 */
+
+
 .gif-buttons {
     text-align: center;
-    background-color: grey;
-    color:white;
+    background-color: yellow;
+    color:#8EB8E5;
     width:100%;
 }
 #title{
     background-color: lavender;
     width: 100%;
     text-align:center;
-    color:grey;
+    color:#7C99B4;
     font-weight:150;
     font-family: 'Times New Roman', Times, serif;
+    border-radius:5px;
 }
 
 .button-adder{
     margin-top: 200px;
+}
+
+#button {
+    margin:2px;
 }

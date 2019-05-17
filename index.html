@@ -5,6 +5,7 @@
     <script src="assets/javascript/app.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+    
     <title> TV Gif App </title>
     <!-- add favicon here -->
 </head>
@@ -13,7 +14,7 @@
         <h1 id="title">Funny TV Show Gifs</h1>
     </div>
     <div class="row">
-
+    
         <div class="gif-buttons">
              
              <button data-show="The Office" class="btn btn-secondary">The Office </button> 
@@ -23,14 +24,15 @@
     </div>
 
     <div class="row">
-        <div class="col-md-8">
-            <div id="gifs-here">GIFS GO HERE</div>
+        <div class="col-md-2"></div>
+        <div class="col-md-6">
+            <div id="gifs-here"></div>
         </div>
         <div class="col-md-4">
             <form class="button-adder">
                 <input type="text" id="show-input" placeholder="add a show!">
                 <div class="search-input">
-                    <button type="button" class="btn btn-secondary">Search</button>
+                    <button type="button" id="search-button" class="btn btn-secondary">Search</button>
                 </div> 
             </form>
         </div>
