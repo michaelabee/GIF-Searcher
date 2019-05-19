@@ -1,7 +1,7 @@
 $(document).ready(function(){
 var topic = ["Brooklyn Nine Nine", "Parks and Rec", "The Office", "It's Always Sunny in Philadelpia", "Arrested Development"];
 
-    var submitButton= function(e){   ///make a separate function createNewButton that runs similar code as "populateButtons" but only after user hits enter
+    var submitButton= function(e){   
         e.preventDefault();
         var output = $('#show-input').val().trim();
         topic.push(output);
@@ -9,6 +9,9 @@ var topic = ["Brooklyn Nine Nine", "Parks and Rec", "The Office", "It's Always S
         $('.gif-buttons').empty();
         populateButtons();
     };
+//I have a bug when a user enters a new show into the form it searchs for gifs of "null"(or something),
+//the created button still works, so I'm not sure why this is happening. I think it has something to do with the 
+//submitButton function, but I couldn't fix it 
 
     $('#search-button').click(submitButton);
 
@@ -23,6 +26,8 @@ var topic = ["Brooklyn Nine Nine", "Parks and Rec", "The Office", "It's Always S
      };
 
      populateButtons();
+//the bug could also be here because I'm selecting all buttons on the body and the submit button 
+//is within the body. Maybe it's searching the API for what is attached to the submit button 
 
      $('body').on("click", '.btn', function(searchshows) {
         var show = $(this).attr("data-show");
@@ -40,16 +45,19 @@ var topic = ["Brooklyn Nine Nine", "Parks and Rec", "The Office", "It's Always S
               var gifDiv = $("<div>");
     
               var rating = results[i].rating;
+              var title = results[i].title;
     
               var p = $("<p>").text("Rating: " + rating);
+              var q =$('<p>').text("Title: " + title);
     
               var showImage = $("<img>");
               showImage.addClass('gif-holder')
               showImage.attr("src", results[i].images.fixed_height_still.url);
               showImage.attr('data-still', results[i].images.fixed_height_still.url);
               showImage.attr('data-moving', results[i].images.fixed_height.url);
-              showImage.attr('still', "4");
+              showImage.attr('still', "isStill");
               gifDiv.prepend(p);
+              gifDiv.prepend(q);
               gifDiv.prepend(showImage);
     
               $("#gifs-here").prepend(gifDiv);
@@ -65,21 +73,16 @@ var topic = ["Brooklyn Nine Nine", "Parks and Rec", "The Office", "It's Always S
             var stillUrl = $(this).attr('data-still');
             var movingUrl = $(this).attr('data-moving');
 
-            if (show === '4'){
+            if (show === 'isStill'){
                 $(this).attr('src', movingUrl)
                 $(this).attr('still', 'i hate js');
             }
             else if (show === 'i hate js' ){
                 $(this).attr('src', stillUrl);
-                $(this).attr('still', '4');
+                $(this).attr('still', 'isStill');
             }
         })
 })
 
-//make the gifs play upon click. maybe add "clickgif"function that replaces the <img> with either the gif.still or the gif.animated 
-//(store them into an data-attribute)
 
-//need to capture the input from my search bar and add it to the "topics" string
-
-//.val() will get whatever is typed into the search bar (after its selected with Jquery)
 

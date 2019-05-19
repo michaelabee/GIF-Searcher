@@ -6,27 +6,43 @@ NICE COLOR SCHEME
 #6B7F82
 #273E47 */
 
+body {
+    background-color: #273E47;
+}
+
+button {
+    margin:4px;
+}
 
 .gif-buttons {
     text-align: center;
-    background-color: yellow;
+    background-color: #ffbe0c;
     color:#8EB8E5;
     width:100%;
+    margin-bottom: 20px;
 }
-#title{
-    background-color: lavender;
+.title{
+    background-color: #273E47;
     width: 100%;
     text-align:center;
-    color:#7C99B4;
-    font-weight:150;
-    font-family: 'Times New Roman', Times, serif;
-    border-radius:5px;
+    color:whitesmoke;
+    font-weight:bolder;
+    font-family: 'serif';
+    
 }
 
 .button-adder{
     margin-top: 200px;
+    float:center;
 }
 
-#button {
-    margin:2px;
+#gifs-here {
+    color:white;
+    font-weight:175;
+
 }
+
+/* need to display gifs as a block on the page  */
+
+
+
